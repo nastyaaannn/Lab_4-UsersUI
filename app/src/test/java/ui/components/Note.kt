@@ -8,11 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.topic2.android.notes.domain.model.NoteModel
 import com.topic2.android.notes.theme.rwGreen
 
 
 @Composable
-fun Note () {
+fun Note(onNoteClick: (NoteModel) -> Unit, isSelected: Boolean, note: NoteModel) {
     Row(modifier = Modifier.fillMaxWidth()) {
         Box(
             modifier = Modifier
@@ -33,4 +34,5 @@ fun Note () {
 }
 @Preview
 @Composable
-private fun NotePreview(){ Note() }
+private fun NotePreview(){ Note(onNoteClick, isNoteSelected, note)
+}
